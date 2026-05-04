@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>Instagram Post - البناء العريق</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      width: 1080px;
+      height: 1080px;
+      overflow: hidden;
+      background: #111;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .post {
+      width: 1080px;
+      height: 1080px;
+      display: flex;
+      direction: rtl;
+      font-family: 'Cairo', 'Segoe UI', Arial, sans-serif;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* ── LEFT PANEL ─────────────────────────────────── */
+    .left-panel {
+      width: 455px;
+      height: 1080px;
+      background: linear-gradient(170deg, #0f2d3e 0%, #14394f 60%, #0c2535 100%);
+      display: flex;
+      flex-direction: column;
+      padding: 42px 38px 38px 28px;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* gold accent bar on the right edge */
+    .left-panel::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 6px;
+      height: 100%;
+      background: linear-gradient(180deg, #d4aa3a 0%, #f0cc60 50%, #d4aa3a 100%);
+    }
+
+    /* decorative gold corner arc top-right */
+    .left-panel::after {
+      content: '';
+      position: absolute;
+      top: -60px;
+      right: -60px;
+      width: 180px;
+      height: 180px;
+      border: 14px solid rgba(212,170,58,0.18);
+      border-radius: 50%;
+    }
+
+    .logo-wrap {
+      display: flex;
+      align-items: center;
+      margin-bottom: 30px;
+    }
+
+    .logo-wrap img {
+      width: 110px;
+      height: 110px;
+      object-fit: contain;
+      border-radius: 50%;
+      background: white;
+      padding: 4px;
+    }
+
+    .headline {
+      color: white;
+      font-size: 58px;
+      font-weight: 900;
+      line-height: 1.12;
+      letter-spacing: -0.5px;
+      margin-bottom: 10px;
+    }
+
+    .headline span {
+      color: #e8c250;
+    }
+
+    .subheadline {
+      color: #a8c8d8;
+      font-size: 22px;
+      font-weight: 600;
+      margin-bottom: 22px;
+      line-height: 1.4;
+    }
+
+    .divider {
+      width: 60px;
+      height: 4px;
+      background: linear-gradient(90deg, #d4aa3a, #f0cc60);
+      border-radius: 2px;
+      margin-bottom: 28px;
+    }
+
+    .features {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      flex: 1;
+    }
+
+    .feature-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+    }
+
+    .feature-icon {
+      width: 38px;
+      height: 38px;
+      min-width: 38px;
+      background: rgba(212,170,58,0.15);
+      border: 1.5px solid rgba(212,170,58,0.45);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 2px;
+    }
+
+    .feature-icon svg {
+      width: 20px;
+      height: 20px;
+      fill: #e8c250;
+    }
+
+    .feature-text strong {
+      display: block;
+      color: #e8c250;
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 2px;
+    }
+
+    .feature-text span {
+      color: #a8c8d8;
+      font-size: 14.5px;
+      font-weight: 400;
+      line-height: 1.4;
+    }
+
+    .footer-tag {
+      margin-top: 24px;
+      background: rgba(212,170,58,0.12);
+      border: 1px solid rgba(212,170,58,0.35);
+      border-radius: 8px;
+      padding: 12px 16px;
+      color: #e8c250;
+      font-size: 15px;
+      font-weight: 600;
+      text-align: center;
+    }
+
+    /* ── RIGHT PANEL ─────────────────────────────────── */
+    .right-panel {
+      flex: 1;
+      height: 1080px;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      position: relative;
+    }
+
+    .photo-block {
+      flex: 1;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* BEFORE – window under construction look */
+    .photo-block.before {
+      background: linear-gradient(160deg, #b8cdd6 0%, #8aadb8 100%);
+    }
+
+    /* AFTER – installed window look */
+    .photo-block.after {
+      background: linear-gradient(160deg, #d6e4ea 0%, #b0ccd6 100%);
+    }
+
+    /* label badge */
+    .photo-label {
+      position: absolute;
+      top: 22px;
+      right: 22px;
+      background: #14394f;
+      color: #e8c250;
+      padding: 8px 22px;
+      font-family: 'Cairo', Arial, sans-serif;
+      font-weight: 700;
+      font-size: 20px;
+      border-radius: 6px;
+      border: 1.5px solid rgba(212,170,58,0.5);
+      letter-spacing: 0.3px;
+      z-index: 5;
+    }
+
+    /* separator line between photos */
+    .photo-sep {
+      height: 4px;
+      background: linear-gradient(90deg, #d4aa3a 0%, #f0cc60 50%, #d4aa3a 100%);
+    }
+
+    /* ── WINDOW ILLUSTRATION – BEFORE ─────────────── */
+    .window-scene {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      inset: 0;
+    }
+
+    /* Wall */
+    .wall {
+      position: absolute;
+      inset: 0;
+    }
+
+    .wall-before {
+      background:
+        repeating-linear-gradient(
+          0deg,
+          transparent,
+          transparent 38px,
+          rgba(0,0,0,0.06) 38px,
+          rgba(0,0,0,0.06) 40px
+        ),
+        repeating-linear-gradient(
+          90deg,
+          transparent,
+          transparent 78px,
+          rgba(0,0,0,0.06) 78px,
+          rgba(0,0,0,0.06) 80px
+        ),
+        linear-gradient(160deg, #c9b89a 0%, #b5a480 100%);
+    }
+
+    .wall-after {
+      background:
+        repeating-linear-gradient(
+          0deg,
+          transparent,
+          transparent 38px,
+          rgba(0,0,0,0.05) 38px,
+          rgba(0,0,0,0.05) 40px
+        ),
+        repeating-linear-gradient(
+          90deg,
+          transparent,
+          transparent 78px,
+          rgba(0,0,0,0.05) 78px,
+          rgba(0,0,0,0.05) 80px
+        ),
+        linear-gradient(160deg, #e2d5c0 0%, #cfc0a0 100%);
+    }
+
+    /* Window frame */
+    .window-frame {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    /* BEFORE: unfinished frame */
+    .win-before {
+      width: 280px;
+      height: 300px;
+    }
+
+    .win-before .frame-outer {
+      width: 100%;
+      height: 100%;
+      background: #4a3a28;
+      border-radius: 4px;
+      padding: 14px;
+      position: relative;
+    }
+
+    .win-before .frame-inner {
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, #7ab8cc 0%, #5a9ab5 50%, #3a7a9a 100%);
+      border-radius: 2px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      padding: 8px;
+    }
+
+    .win-before .pane {
+      background: linear-gradient(135deg, rgba(255,255,255,0.5) 0%, rgba(200,230,240,0.7) 100%);
+      border-radius: 2px;
+      border: 1px solid rgba(255,255,255,0.4);
+    }
+
+    .win-before .tools {
+      position: absolute;
+      bottom: -30px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 8px;
+    }
+
+    .win-before .tool-item {
+      width: 24px;
+      height: 60px;
+      background: #6b7c8a;
+      border-radius: 3px;
+    }
+
+    .win-before .tool-item:nth-child(2) {
+      height: 44px;
+      background: #8a6b4a;
+    }
+
+    /* Construction marks */
+    .chalk-line {
+      position: absolute;
+      background: rgba(255,255,255,0.4);
+      border-radius: 2px;
+    }
+
+    /* AFTER: finished aluminum window */
+    .win-after {
+      width: 300px;
+      height: 320px;
+    }
+
+    .win-after .frame-outer {
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 50%, #222 100%);
+      border-radius: 6px;
+      padding: 12px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.1);
+    }
+
+    .win-after .frame-inner {
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, #6ab0cc 0%, #4a90aa 40%, #2a7090 100%);
+      border-radius: 3px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      padding: 10px;
+      position: relative;
+    }
+
+    .win-after .pane {
+      background: linear-gradient(135deg,
+        rgba(255,255,255,0.65) 0%,
+        rgba(200,235,245,0.55) 40%,
+        rgba(150,210,230,0.4) 100%
+      );
+      border-radius: 2px;
+      border: 1px solid rgba(255,255,255,0.5);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* glass reflection */
+    .win-after .pane::after {
+      content: '';
+      position: absolute;
+      top: 6px;
+      right: 8px;
+      width: 30%;
+      height: 50%;
+      background: rgba(255,255,255,0.4);
+      border-radius: 2px;
+      transform: skewX(-10deg);
+    }
+
+    /* middle divider bar */
+    .win-after .center-bar {
+      position: absolute;
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      width: 10px;
+      background: linear-gradient(90deg, #2a2a2a, #3a3a3a, #2a2a2a);
+      transform: translateX(-50%);
+    }
+
+    /* handle */
+    .win-after .handle {
+      position: absolute;
+      right: calc(50% - 22px);
+      top: 50%;
+      transform: translateY(-50%);
+      width: 10px;
+      height: 36px;
+      background: linear-gradient(180deg, #aaa 0%, #888 100%);
+      border-radius: 5px;
+      z-index: 10;
+    }
+
+    /* building facade behind after window */
+    .facade {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 45%;
+      background: linear-gradient(180deg, transparent 0%, rgba(180,165,140,0.3) 100%);
+    }
+
+    /* checkmark badge on after panel */
+    .check-badge {
+      position: absolute;
+      bottom: 22px;
+      left: 22px;
+      width: 52px;
+      height: 52px;
+      background: #2ecc71;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 12px rgba(46,204,113,0.5);
+    }
+
+    .check-badge svg {
+      width: 28px;
+      height: 28px;
+    }
+
+    /* ── OVERLAY GRADIENT on right panel ──────────── */
+    .right-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, rgba(14,45,62,0.45) 0%, transparent 40%);
+      pointer-events: none;
+      z-index: 3;
+    }
+  </style>
+</head>
+<body>
+  <div class="post">
+
+    <!-- ═══ LEFT PANEL ═══════════════════════════════ -->
+    <div class="left-panel">
+
+      <div class="logo-wrap">
+        <img src="logo.jpg" alt="شعار البناء العريق">
+      </div>
+
+      <div class="headline">
+        تركيب النوافـذ<br>
+        <span>بدقة وجودة</span><br>عالية
+      </div>
+
+      <div class="subheadline">
+        كل تفصيلة تُنفَّذ باحتراف<br>لضمان الراحة والأمان
+      </div>
+
+      <div class="divider"></div>
+
+      <ul class="features">
+
+        <li class="feature-item">
+          <div class="feature-icon">
+            <!-- shield / quality icon -->
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 2L4 5v6c0 5.25 3.4 10.15 8 11.35C16.6 21.15 20 16.25 20 11V5l-8-3zm-2 13l-3-3 1.41-1.41L10 12.17l5.59-5.58L17 8l-7 7z"/>
+            </svg>
+          </div>
+          <div class="feature-text">
+            <strong>إطار متين</strong>
+            <span>ضمانات عالية الجودة لمتانة دائمة</span>
+          </div>
+        </li>
+
+        <li class="feature-item">
+          <div class="feature-icon">
+            <!-- temperature / insulation icon -->
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M9 16a5 5 0 0 0 6 0V5a3 3 0 0 0-6 0v11zm3-14a1 1 0 0 1 1 1v1h-2V3a1 1 0 0 1 1-1zm0 18a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
+            </svg>
+          </div>
+          <div class="feature-text">
+            <strong>زجاج عازل</strong>
+            <span>يمنع مرور الحرارة والضوضاء لراحة أفضل</span>
+          </div>
+        </li>
+
+        <li class="feature-item">
+          <div class="feature-icon">
+            <!-- star / finish icon -->
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+            </svg>
+          </div>
+          <div class="feature-text">
+            <strong>تشطيب احترافي</strong>
+            <span>تشطيبات دقيقة وألوان متعددة لتكامل أفضل</span>
+          </div>
+        </li>
+
+        <li class="feature-item">
+          <div class="feature-icon">
+            <!-- lock / seal icon -->
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/>
+            </svg>
+          </div>
+          <div class="feature-text">
+            <strong>إحكام وعزل تام</strong>
+            <span>عزل محكم ضد الماء والهواء والضوضاء</span>
+          </div>
+        </li>
+
+      </ul>
+
+      <div class="footer-tag">
+        &#9742; تواصل معنا للحصول على عرض مجاني
+      </div>
+
+    </div>
+    <!-- END LEFT PANEL -->
+
+    <!-- ═══ RIGHT PANEL ══════════════════════════════ -->
+    <div class="right-panel">
+
+      <!-- gradient overlay from left -->
+      <div class="right-overlay"></div>
+
+      <!-- BEFORE photo -->
+      <div class="photo-block before">
+        <div class="window-scene">
+          <div class="wall wall-before"></div>
+
+          <div class="window-frame win-before">
+            <div class="frame-outer">
+              <!-- chalk lines -->
+              <div class="chalk-line" style="width:100%;height:2px;top:30%;opacity:0.5;"></div>
+              <div class="chalk-line" style="width:2px;height:100%;left:48%;top:0;opacity:0.5;"></div>
+              <div class="frame-inner">
+                <div class="pane"></div>
+                <div class="pane"></div>
+                <div class="pane"></div>
+                <div class="pane"></div>
+              </div>
+              <div class="tools">
+                <div class="tool-item"></div>
+                <div class="tool-item"></div>
+                <div class="tool-item" style="height:52px;width:18px;background:#9a7a5a;"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="photo-label">أثناء التركيب</div>
+      </div>
+
+      <!-- separator -->
+      <div class="photo-sep"></div>
+
+      <!-- AFTER photo -->
+      <div class="photo-block after">
+        <div class="window-scene">
+          <div class="wall wall-after"></div>
+          <div class="facade"></div>
+
+          <div class="window-frame win-after">
+            <div class="frame-outer">
+              <div class="frame-inner">
+                <div class="pane"></div>
+                <div class="pane"></div>
+                <div class="pane"></div>
+                <div class="pane"></div>
+                <div class="center-bar"></div>
+                <div class="handle"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="check-badge">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M5 13l4 4L19 7" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+        </div>
+        <div class="photo-label">بعد التركيب</div>
+      </div>
+
+    </div>
+    <!-- END RIGHT PANEL -->
+
+  </div>
+</body>
+</html>
