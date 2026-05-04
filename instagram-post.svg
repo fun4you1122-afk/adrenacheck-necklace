@@ -1,0 +1,275 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+     width="1080" height="1080" viewBox="0 0 1080 1080">
+  <defs>
+    <!-- Fonts -->
+    <style>@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&amp;display=swap');</style>
+
+    <!-- Gradients -->
+    <linearGradient id="gLeftBg" x1="0" y1="0" x2="0.2" y2="1">
+      <stop offset="0%"   stop-color="#0f2d3e"/>
+      <stop offset="55%"  stop-color="#14394f"/>
+      <stop offset="100%" stop-color="#0c2535"/>
+    </linearGradient>
+    <linearGradient id="gGoldV" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"   stop-color="#d4aa3a"/>
+      <stop offset="50%"  stop-color="#f0cc60"/>
+      <stop offset="100%" stop-color="#d4aa3a"/>
+    </linearGradient>
+    <linearGradient id="gGoldH" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%"   stop-color="#d4aa3a"/>
+      <stop offset="100%" stop-color="#f0cc60"/>
+    </linearGradient>
+    <linearGradient id="gWallOld" x1="0.2" y1="0" x2="0.8" y2="1">
+      <stop offset="0%"   stop-color="#c5b490"/>
+      <stop offset="100%" stop-color="#a89070"/>
+    </linearGradient>
+    <linearGradient id="gWallNew" x1="0.2" y1="0" x2="0.8" y2="1">
+      <stop offset="0%"   stop-color="#dfd0b8"/>
+      <stop offset="100%" stop-color="#c8b898"/>
+    </linearGradient>
+    <linearGradient id="gGlassOld" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%"   stop-color="#8ac4d8"/>
+      <stop offset="60%"  stop-color="#5a9ab5"/>
+      <stop offset="100%" stop-color="#3a7090"/>
+    </linearGradient>
+    <linearGradient id="gGlassNew" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%"   stop-color="#72b8d0"/>
+      <stop offset="40%"  stop-color="#4a90aa"/>
+      <stop offset="100%" stop-color="#2a6888"/>
+    </linearGradient>
+    <linearGradient id="gFrame" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%"   stop-color="#303030"/>
+      <stop offset="50%"  stop-color="#3e3e3e"/>
+      <stop offset="100%" stop-color="#252525"/>
+    </linearGradient>
+    <linearGradient id="gSep" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%"   stop-color="#d4aa3a"/>
+      <stop offset="50%"  stop-color="#f0cc60"/>
+      <stop offset="100%" stop-color="#d4aa3a"/>
+    </linearGradient>
+    <linearGradient id="gFade" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%"   stop-color="#0e2d3e" stop-opacity="0.55"/>
+      <stop offset="38%"  stop-color="#0e2d3e" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="gCheck" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"   stop-color="#2ecc71"/>
+      <stop offset="100%" stop-color="#22a85f"/>
+    </linearGradient>
+    <linearGradient id="gPane" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%"   stop-color="white"   stop-opacity="0.62"/>
+      <stop offset="45%"  stop-color="#c8ebf5" stop-opacity="0.52"/>
+      <stop offset="100%" stop-color="#90d0e8" stop-opacity="0.35"/>
+    </linearGradient>
+    <linearGradient id="gHandle" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"   stop-color="#b8b8b8"/>
+      <stop offset="100%" stop-color="#888888"/>
+    </linearGradient>
+
+    <!-- Brick pattern -->
+    <pattern id="bricks" x="0" y="0" width="80" height="40" patternUnits="userSpaceOnUse">
+      <line x1="0"  y1="20" x2="80" y2="20" stroke="rgba(0,0,0,0.07)" stroke-width="1.5"/>
+      <line x1="40" y1="0"  x2="40" y2="20" stroke="rgba(0,0,0,0.07)" stroke-width="1.5"/>
+      <line x1="0"  y1="0"  x2="0"  y2="20" stroke="rgba(0,0,0,0.07)" stroke-width="1.5"/>
+      <line x1="20" y1="20" x2="20" y2="40" stroke="rgba(0,0,0,0.07)" stroke-width="1.5"/>
+      <line x1="60" y1="20" x2="60" y2="40" stroke="rgba(0,0,0,0.07)" stroke-width="1.5"/>
+      <line x1="0"  y1="20" x2="0"  y2="40" stroke="rgba(0,0,0,0.07)" stroke-width="1.5"/>
+      <line x1="80" y1="20" x2="80" y2="40" stroke="rgba(0,0,0,0.07)" stroke-width="1.5"/>
+      <line x1="0"  y1="40" x2="80" y2="40" stroke="rgba(0,0,0,0.07)" stroke-width="1.5"/>
+    </pattern>
+
+    <!-- Logo clip -->
+    <clipPath id="logoClip">
+      <circle cx="70" cy="70" r="66"/>
+    </clipPath>
+
+    <!-- Drop shadow -->
+    <filter id="fShadow" x="-15%" y="-15%" width="130%" height="130%">
+      <feDropShadow dx="5" dy="8" stdDeviation="10" flood-color="rgba(0,0,0,0.38)"/>
+    </filter>
+  </defs>
+
+  <!-- ══════════════════════════════════════════════
+       RIGHT PANEL
+  ══════════════════════════════════════════════ -->
+
+  <!-- BEFORE  (y 0–535) -->
+  <rect x="455" y="0"   width="625" height="535" fill="url(#gWallOld)"/>
+  <rect x="455" y="0"   width="625" height="535" fill="url(#bricks)"/>
+
+  <!-- Window BEFORE – wooden unfinished frame -->
+  <rect x="572" y="58"  width="300" height="326" rx="5" fill="#4a3a28"/>
+  <rect x="586" y="72"  width="272" height="298" rx="3" fill="url(#gGlassOld)"/>
+  <!-- panes -->
+  <rect x="590" y="76"  width="128" height="141" rx="2" fill="url(#gPane)" opacity="0.9"/>
+  <rect x="726" y="76"  width="128" height="141" rx="2" fill="url(#gPane)" opacity="0.75"/>
+  <rect x="590" y="225" width="128" height="141" rx="2" fill="url(#gPane)" opacity="0.7"/>
+  <rect x="726" y="225" width="128" height="141" rx="2" fill="url(#gPane)" opacity="0.82"/>
+  <!-- bars -->
+  <rect x="718" y="72"  width="8"   height="298" fill="#4a3a28"/>
+  <rect x="586" y="217" width="272" height="8"   fill="#4a3a28"/>
+  <!-- chalk lines -->
+  <line x1="558" y1="220" x2="574" y2="220" stroke="rgba(255,255,255,0.45)" stroke-width="1.5" stroke-dasharray="6,4"/>
+  <line x1="558" y1="76"  x2="574" y2="76"  stroke="rgba(255,255,255,0.45)" stroke-width="1.5" stroke-dasharray="6,4"/>
+  <line x1="558" y1="76"  x2="558" y2="376" stroke="rgba(255,255,255,0.4)"  stroke-width="2"/>
+  <line x1="551" y1="76"  x2="565" y2="76"  stroke="rgba(255,255,255,0.4)"  stroke-width="2"/>
+  <line x1="551" y1="376" x2="565" y2="376" stroke="rgba(255,255,255,0.4)"  stroke-width="2"/>
+  <!-- tools -->
+  <rect x="640" y="392" width="24" height="56" rx="4" fill="#6b7c8a"/>
+  <rect x="672" y="392" width="18" height="44" rx="3" fill="#8a6b4a"/>
+  <rect x="698" y="392" width="22" height="62" rx="4" fill="#5a6b7a"/>
+
+  <!-- AFTER  (y 539–1080) -->
+  <rect x="455" y="539" width="625" height="541" fill="url(#gWallNew)"/>
+  <rect x="455" y="539" width="625" height="541" fill="url(#bricks)" opacity="0.55"/>
+  <rect x="455" y="830" width="625" height="250" fill="rgba(140,120,90,0.22)"/>
+
+  <!-- Window AFTER – aluminium double-pane -->
+  <rect x="563" y="614" width="330" height="350" rx="9" fill="rgba(0,0,0,0.30)" transform="translate(7,9)"/>
+  <rect x="563" y="614" width="330" height="350" rx="8" fill="url(#gFrame)"/>
+  <rect x="563" y="614" width="330" height="3"   rx="1.5" fill="rgba(255,255,255,0.14)"/>
+  <rect x="577" y="628" width="302" height="322" rx="3" fill="url(#gGlassNew)"/>
+  <!-- panes -->
+  <rect x="581" y="632" width="142" height="152" rx="2" fill="url(#gPane)" opacity="0.92"/>
+  <rect x="731" y="632" width="142" height="152" rx="2" fill="url(#gPane)" opacity="0.8"/>
+  <rect x="581" y="792" width="142" height="154" rx="2" fill="url(#gPane)" opacity="0.78"/>
+  <rect x="731" y="792" width="142" height="154" rx="2" fill="url(#gPane)" opacity="0.88"/>
+  <!-- reflections -->
+  <rect x="588" y="640" width="30" height="62" rx="3" fill="rgba(255,255,255,0.36)" transform="skewX(-9)"/>
+  <rect x="738" y="640" width="30" height="62" rx="3" fill="rgba(255,255,255,0.36)" transform="skewX(-9)"/>
+  <rect x="588" y="800" width="30" height="62" rx="3" fill="rgba(255,255,255,0.36)" transform="skewX(-9)"/>
+  <rect x="738" y="800" width="30" height="62" rx="3" fill="rgba(255,255,255,0.36)" transform="skewX(-9)"/>
+  <!-- bars -->
+  <rect x="721" y="628" width="12"  height="322" fill="#282828"/>
+  <rect x="577" y="781" width="302" height="12"  fill="#282828"/>
+  <!-- handle -->
+  <rect x="717" y="773" width="12" height="44" rx="6" fill="url(#gHandle)"/>
+  <rect x="719" y="775" width="8"  height="40" rx="4" fill="#c4c4c4"/>
+
+  <!-- Gold separator -->
+  <rect x="455" y="535" width="625" height="4" fill="url(#gSep)"/>
+
+  <!-- Fade overlay -->
+  <rect x="455" y="0" width="625" height="1080" fill="url(#gFade)"/>
+
+  <!-- Label BEFORE -->
+  <rect x="474" y="22" width="222" height="44" rx="7" fill="#14394f" fill-opacity="0.93"/>
+  <rect x="474" y="22" width="222" height="44" rx="7" fill="none" stroke="#d4aa3a" stroke-width="1.5" stroke-opacity="0.65"/>
+  <text x="585" y="51" text-anchor="middle"
+        font-family="Cairo,Arial,sans-serif" font-weight="700" font-size="21" fill="#e8c250">أثناء التركيب</text>
+
+  <!-- Label AFTER -->
+  <rect x="474" y="558" width="222" height="44" rx="7" fill="#14394f" fill-opacity="0.93"/>
+  <rect x="474" y="558" width="222" height="44" rx="7" fill="none" stroke="#d4aa3a" stroke-width="1.5" stroke-opacity="0.65"/>
+  <text x="585" y="587" text-anchor="middle"
+        font-family="Cairo,Arial,sans-serif" font-weight="700" font-size="21" fill="#e8c250">بعد التركيب</text>
+
+  <!-- Checkmark -->
+  <circle cx="516" cy="1042" r="30" fill="url(#gCheck)" filter="url(#fShadow)"/>
+  <polyline points="503,1042 511,1053 531,1030"
+            fill="none" stroke="white" stroke-width="3.5"
+            stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- ══════════════════════════════════════════════
+       LEFT PANEL
+  ══════════════════════════════════════════════ -->
+  <rect x="0" y="0" width="455" height="1080" fill="url(#gLeftBg)"/>
+
+  <!-- Gold left edge -->
+  <rect x="0" y="0" width="6" height="1080" fill="url(#gGoldV)"/>
+
+  <!-- Decorative arcs (top-right of left panel) -->
+  <circle cx="455" cy="0" r="158" fill="none" stroke="#d4aa3a" stroke-width="16" stroke-opacity="0.11"/>
+  <circle cx="455" cy="0" r="110" fill="none" stroke="#d4aa3a" stroke-width="9"  stroke-opacity="0.08"/>
+
+  <!-- Logo circle -->
+  <circle cx="76" cy="76" r="72" fill="white"/>
+  <circle cx="76" cy="76" r="72" fill="none" stroke="#d4aa3a" stroke-width="3.5"/>
+  <image href="data:image/jpeg;base64,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"
+         x="4" y="4" width="144" height="144"
+         clip-path="url(#logoClip)"
+         preserveAspectRatio="xMidYMid slice"/>
+
+  <!-- ── Headline ── -->
+  <text x="432" y="202"
+        text-anchor="end"
+        font-family="Cairo,Arial,sans-serif"
+        font-weight="900" font-size="70" fill="white">تركيب النوافـذ</text>
+  <text x="432" y="284"
+        text-anchor="end"
+        font-family="Cairo,Arial,sans-serif"
+        font-weight="900" font-size="66" fill="#e8c250">بدقة وجودة</text>
+  <text x="432" y="360"
+        text-anchor="end"
+        font-family="Cairo,Arial,sans-serif"
+        font-weight="900" font-size="66" fill="white">عالية</text>
+
+  <!-- Tagline -->
+  <text x="432" y="406"
+        text-anchor="end"
+        font-family="Cairo,Arial,sans-serif"
+        font-weight="600" font-size="20" fill="#9ac4d8">كل تفصيلة تُنفَّذ باحتراف لضمان الراحة والأمان</text>
+
+  <!-- Gold divider -->
+  <rect x="363" y="428" width="69" height="5" rx="2.5" fill="url(#gGoldH)"/>
+
+  <!-- ── Feature 1: إطار متين ── -->
+  <rect x="391" y="452" width="41" height="41" rx="9"
+        fill="rgba(212,170,58,0.14)" stroke="#d4aa3a" stroke-width="1.5" stroke-opacity="0.5"/>
+  <path d="M411.5 458 L404 462 L404 468 C404 472.4 407.3 476.5 411.5 477.8 C415.7 476.5 419 472.4 419 468 L419 462 Z"
+        fill="#e8c250"/>
+  <path d="M409 471 L406.5 468.5 L408.2 466.8 L409 467.6 L414.5 462.1 L416.2 463.8 Z" fill="#14394f"/>
+  <text x="380" y="469" text-anchor="end"
+        font-family="Cairo,Arial,sans-serif" font-weight="700" font-size="19" fill="#e8c250">إطار متين</text>
+  <text x="380" y="488" text-anchor="end"
+        font-family="Cairo,Arial,sans-serif" font-weight="400" font-size="15" fill="#9ac4d8">ضمانات عالية الجودة لمتانة دائمة</text>
+
+  <!-- ── Feature 2: زجاج عازل ── -->
+  <rect x="391" y="518" width="41" height="41" rx="9"
+        fill="rgba(212,170,58,0.14)" stroke="#d4aa3a" stroke-width="1.5" stroke-opacity="0.5"/>
+  <rect x="406" y="523" width="11" height="20" rx="3" fill="#e8c250"/>
+  <rect x="405" y="540" width="13" height="3"  rx="1.5" fill="#e8c250"/>
+  <circle cx="411.5" cy="547" r="5" fill="#e8c250"/>
+  <text x="380" y="535" text-anchor="end"
+        font-family="Cairo,Arial,sans-serif" font-weight="700" font-size="19" fill="#e8c250">زجاج عازل</text>
+  <text x="380" y="554" text-anchor="end"
+        font-family="Cairo,Arial,sans-serif" font-weight="400" font-size="15" fill="#9ac4d8">يمنع مرور الحرارة والضوضاء لراحة أفضل</text>
+
+  <!-- ── Feature 3: تشطيب احترافي ── -->
+  <rect x="391" y="584" width="41" height="41" rx="9"
+        fill="rgba(212,170,58,0.14)" stroke="#d4aa3a" stroke-width="1.5" stroke-opacity="0.5"/>
+  <polygon points="411.5,588 414.6,597.8 424.8,597.8 416.6,603.8 419.6,613.5 411.5,607.6 403.4,613.5 406.4,603.8 398.2,597.8 408.4,597.8"
+           fill="#e8c250"/>
+  <text x="380" y="601" text-anchor="end"
+        font-family="Cairo,Arial,sans-serif" font-weight="700" font-size="19" fill="#e8c250">تشطيب احترافي</text>
+  <text x="380" y="620" text-anchor="end"
+        font-family="Cairo,Arial,sans-serif" font-weight="400" font-size="15" fill="#9ac4d8">تشطيبات دقيقة وألوان متعددة لتكامل أفضل</text>
+
+  <!-- ── Feature 4: إحكام وعزل تام ── -->
+  <rect x="391" y="650" width="41" height="41" rx="9"
+        fill="rgba(212,170,58,0.14)" stroke="#d4aa3a" stroke-width="1.5" stroke-opacity="0.5"/>
+  <rect x="403.5" y="662" width="16" height="12" rx="2.5" fill="#e8c250"/>
+  <path d="M406.5 662 L406.5 658.5 C406.5 655.7 408.7 653.5 411.5 653.5 C414.3 653.5 416.5 655.7 416.5 658.5 L416.5 662"
+        fill="none" stroke="#e8c250" stroke-width="2.2" stroke-linecap="round"/>
+  <circle cx="411.5" cy="668" r="2" fill="#14394f"/>
+  <rect x="410.5" y="668" width="2" height="4" rx="1" fill="#14394f"/>
+  <text x="380" y="667" text-anchor="end"
+        font-family="Cairo,Arial,sans-serif" font-weight="700" font-size="19" fill="#e8c250">إحكام وعزل تام</text>
+  <text x="380" y="686" text-anchor="end"
+        font-family="Cairo,Arial,sans-serif" font-weight="400" font-size="15" fill="#9ac4d8">عزل محكم ضد الماء والهواء والضوضاء</text>
+
+  <!-- ── CTA box ── -->
+  <rect x="22" y="746" width="416" height="54" rx="10"
+        fill="rgba(212,170,58,0.13)" stroke="#d4aa3a" stroke-width="1.4" stroke-opacity="0.45"/>
+  <text x="230" y="780" text-anchor="middle"
+        font-family="Cairo,Arial,sans-serif" font-weight="700" font-size="19" fill="#e8c250">&#9742; تواصل معنا للحصول على عرض مجاني</text>
+
+  <!-- ── Company name ── -->
+  <text x="230" y="856" text-anchor="middle"
+        font-family="Cairo,Arial,sans-serif" font-weight="600" font-size="16" fill="#6a9ab0">البناء العريق للمقاولات والصيانة العامة</text>
+
+  <!-- Bottom accent dots -->
+  <circle cx="100" cy="956" r="4" fill="#d4aa3a" fill-opacity="0.25"/>
+  <circle cx="120" cy="956" r="4" fill="#d4aa3a" fill-opacity="0.18"/>
+  <circle cx="140" cy="956" r="4" fill="#d4aa3a" fill-opacity="0.12"/>
+
+</svg>
